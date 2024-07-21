@@ -17,6 +17,32 @@ The SD-Card interface, the status LED and the RESET Button are implemented as pi
 ## The features that got removed
 The display with its display controller, the clock, the clock battery, the buttons for interfacing with the display, and the IEC connector have been removed. The circuitry to support SD cards (mainly the 3.3 V power regulator) has also been moved to the readily available card modules. This allows the use of SD and MicroSD modules and the aforementioned flexibility in positioning these modules in a housing.
 
+## The LED options
+The board is designed to be configured for a 2 LED or 3 LED setup:
+
+### 2 LED variant
+In the 2 LED variant power and error are combined in a *bidirectional* dual-color led (NOT common cathode or common anode!), reminiscent of how the CBM drives did. Activity is shown on a standard LED.
+
+* install a jumper wire in place of R4
+* connect a bidirectional LED between pins 3 (error) and 4 (power) of J4
+* connect a standard LED between pins 1(activity) and 2 (gnd) of J4
+
+### 3 LED variant
+In the 3 LED variant power and error as well as activity are displayed with independent LED.
+
+* don't install R6 (leave open)
+* install a 330 Ohm resistor in R4
+* install a 330 Ohm resistor in R5
+* connect power LED between pins 4 (power) and 2 (GND) of J4
+* connect error LED between pins 3 (error) and 2 (GND) of J4
+* connect activity LED between pins 1 (activity) and 2 (GND) of J4
+
+## The SD card adapters - 5V warning
+The board can be connected to readily available SD-Card and Micro-SD-Card interface boards.
+Note that the D9096 is operating at 5 volts, the Interface boards used MUST have appropriate level shifters installed.
+Tested and working boards are: *DEBO MICROSD 2* and *C-Control Pro Nr. 197220*
+Boards that just use a voltage regulator and some passive resistors do NOT work!
+
 ## The printable housing option
 To adapt the cheaply available Bahar enclosue 150*140*70mm project box, 3d printable parts are available.
 
