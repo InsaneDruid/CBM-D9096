@@ -9599,7 +9599,7 @@
 		)
 		(uuid "3e890ca3-0c87-4ad4-a94b-9ecf3485ebb2")
 	)
-	(text "For 3 LED:\nremove R6 (leave open)\ninstall 330 Ohm in  R2\ninstall 330 Ohm in  R5\nPWR LED: 4-2\nERR LED: 3-2\nACT LED: 1-2"
+	(text "For 3 LED:\nremove R6 (leave open)\ninstall 330 Ohm in  R4\ninstall 330 Ohm in  R5\nPWR LED: 4-2\nERR LED: 3-2\nACT LED: 1-2"
 		(exclude_from_sim no)
 		(at 260.35 184.15 0)
 		(effects
@@ -9620,7 +9620,7 @@
 		)
 		(uuid "c67be4f7-68ee-4447-9237-220c85078e4a")
 	)
-	(text "For PWR/ERR DUAL-LED\njumper R2"
+	(text "For PWR/ERR DUAL-LED\njumper R4 with a wire"
 		(exclude_from_sim no)
 		(at 260.35 153.67 0)
 		(effects
