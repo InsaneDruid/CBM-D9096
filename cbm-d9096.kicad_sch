@@ -14659,7 +14659,7 @@
 				)
 			)
 		)
-		(property "Value" "6x10K"
+		(property "Value" "5x10K"
 			(at 243.586 226.06 90)
 			(effects
 				(font
