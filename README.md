@@ -18,7 +18,7 @@ The display with its display controller, the clock, the clock battery, the butto
 The CBM D9096 in general can be used with the standard petSD+ version of the NODISKEMU firmware.
 As the petSD+ uses a single pin of the in adc mode with the different buttons forming different voltage dividers with 2.79V = no button pressed, the Resistors R1 and R2 are neccessary when using the official firmware.
 
-Andy Gray has provided a customized [firmware](https://github.com/InsaneDruid/cbm-d9096/blob/main/firmware/cbm-d9096.bin "cbm-d9096.bin") in which the button input is completely deactivated, so that the use of a voltage divider is no longer necessary and R1 and R2 can be omitted. This *should* also improve stability against input voltage fluctuations, as the button voltages where very tightly spaced with only 0.1x Volt between different input meanings
+Andy Grady has provided a customized [firmware](https://github.com/InsaneDruid/cbm-d9096/blob/main/firmware/cbm-d9096.bin "cbm-d9096.bin") in which the button input is completely deactivated, so that the use of a voltage divider is no longer necessary and R1 and R2 can be omitted. This *should* also improve stability against input voltage fluctuations, as the button voltages where very tightly spaced with only 0.1x Volt between different input meanings
 
 ### Firmware installation
 * Flash the [bootloader](https://github.com/InsaneDruid/cbm-d9096/blob/main/firmware/new-bootloader-for-16-MHz-petSD-plus.hex "new-bootloader-for-16-MHz-petSD-plus.hex") file to the Atmega. 
@@ -72,3 +72,5 @@ See https://creativecommons.org/licenses/by-sa/4.0/.
 
 ## The Credits
 This work would not have been possible without the work of Nils Eilers and his wonderful PetSD+. In addition, Steve J. Gray had the idea of a similar cost- and feature-reduced version of the PetSD+ when he designed his cbmSD-mini, which uses board-edge connectors and is designed to connect directly to the PETs board and case. This work inspired the CBM D9096.
+
+Special thanks also go to Andy Grady for the customized firmware.
