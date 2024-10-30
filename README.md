@@ -7,15 +7,32 @@ Inspired by the work of Steve J. Gray and his cbmSD-mini, the CBM D9096 is a cos
 
 [Bill of Materials](https://htmlpreview.github.io/?https://github.com/InsaneDruid/cbm-d9096/blob/main/bom/cbm-d9096_bom.html "Bill of Materials")
 
-## The Firmware
-The CBM D9096 uses the standard petSD+ version of the NODISKEMU firmware.
-
 ## The features
 A 24-pin Centronics IEEE488/GBIP connector allows the CBM D9096 to be placed anywhere in the IEEE488 chain. This also eliminates the need for a second connector, as the IEEE488 connectors are designed to be stackable.
 The SD-Card interface, the status LED and the RESET Button are implemented as pinheaders, so that the main PCB with the GBIB plug and power port can be spaced away from the parts the user needs to interact with, giving flexibility in the design of a case. Additionally, the option to use a Molex Mini Fit Jr Power Plug for connecting to an internal power supply has been implemented.
 
 ## The features that got removed
 The display with its display controller, the clock, the clock battery, the buttons for interfacing with the display, and the IEC connector have been removed. The circuitry to support SD cards (mainly the 3.3 V power regulator) has also been moved to the readily available card modules. This allows the use of SD and MicroSD modules and the aforementioned flexibility in positioning these modules in a housing.
+
+## The Firmware
+The CBM D9096 in general can be used with the standard petSD+ version of the NODISKEMU firmware.
+As the petSD+ uses a single pin of the in adc mode with the different buttons forming different voltage dividers with 2.79V = no button pressed, the Resistors R1 and R2 are neccessary when using the official firmware.
+
+Andy Gray has provided a customized [firmware](https://github.com/InsaneDruid/cbm-d9096/blob/main/firmware/cbm-d9096.bin "cbm-d9096.bin") in which the button input is completely deactivated, so that the use of a voltage divider is no longer necessary and R1 and R2 can be omitted. This *should* also improve stability against input voltage fluctuations, as the button voltages where very tightly spaced with only 0.1x Volt between different input meanings
+
+### Firmware installation
+* Flash the [bootloader](https://github.com/InsaneDruid/cbm-d9096/blob/main/firmware/new-bootloader-for-16-MHz-petSD-plus.hex "new-bootloader-for-16-MHz-petSD-plus.hex") file to the Atmega. 
+    * Set the fuse bits to Low: F7, High: D2, Extended: FC
+        * low: CKSEL3=low
+        * high: SPIEN=0, EESAVE=0, BOOTSZ1=0, BOOTRST=0
+        * extended: BODLEVEL1=0, BODLEVEL0=0
+* Install the Atmega in the board.
+* Copy the [firmware](https://github.com/InsaneDruid/cbm-d9096/blob/main/firmware/cbm-d9096.bin "cbm-d9096.bin") to a FAT16 or FAT32 formatted SD-card.
+* Insert the prepared card and turn on the d9096.
+* On startup, the bootloader will program the firmware to the Atmega.
+    * The file name is not important - the bootloader checks for a hardware tag and version number in the file.
+    * During the flash operation the busy LED flickers rapidly.
+    * If a valid firmware is not found, the boot loader will flash the error LED for two seconds and try to find a valid file once more.
 
 ## The LED options
 The board is designed to be configured for a 2 LED or 3 LED setup:
