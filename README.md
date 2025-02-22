@@ -16,15 +16,18 @@ The display with its display controller, the clock, the clock battery, the butto
 
 ## The SD card adapters - 1.10 adding more options
 The board now features two headers to attach readily available SD card and Micro SD card modules.
-The one marked *5V SPI SD-CARD* is operating at 5 volts! The card modules attached here  MUST have appropriate level shifters installed.
+The one marked *5V SPI SD-CARD* (J3) is operating at 5 volts! The card modules attached here  MUST have appropriate level shifters installed.
 Tis applies to nearly all readily available Micro SD card modules, but only some older SD card modules.
 Tested and working boards are: *DEBO MICROSD 2* and *C-Control Pro Nr. 197220*
 Boards that just use a voltage regulator and some passive resistors do NOT work on this header!
 
-The one marked *3.3V SPI SD-CARD* is operating at 3.3 volts using a TXU0304 SPI level shifter and a 3.3V regulator.The card modules attached here don't need (and should *not* have!) their own level shifters.
-This applies to nearly all readily available full size SD card modules. 
+The one marked *3.3V SPI SD-CARD* (J5) is operating at 3.3 volts using a TXU0304 SPI level shifter and a 3.3V regulator.The card modules attached here don't need (and should *not* have!) their own level shifters.
+This applies to nearly all readily available full size SD card modules. Note: this port supplies 3.3V OR 5V to the card module. Select the appropriate pin depending on the card module to connect. 
 
-Note: you CANNOT install two SD card modules at the same time!
+*Attention!* you CANNOT install two SD card modules at the same time!
+
+## The *card detect* and *write protect* signals
+Both SD card headers J3 & J5 have ground pin headers available behind the pins for the card detect ("CD") and write protect ("WP) signals (marked J4 & J6). If the attached card module doesn't provide these signals, for example all Micro SD modules, connect a 2.54mm jumper between the CD and or WP pins of J3/J5 and the associated pin of J4/J6 to permanently tie these signals to ground (permanently enable them).
 
 ## The Firmware
 Andy Grady has provided a customized [firmware](https://github.com/InsaneDruid/cbm-d9096/blob/main/firmware/cbm-d9096.bin "cbm-d9096.bin") in which the button input is completely deactivated, so that the use of a voltage divider and filtered analog voltage is no longer necessary and with V1.1.0 these supporting parts are omitted. 
