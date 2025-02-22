@@ -14,11 +14,20 @@ The SD-Card interface, the status LED and the RESET Button are implemented as pi
 ## The features that got removed
 The display with its display controller, the clock, the clock battery, the buttons for interfacing with the display, and the IEC connector have been removed. The circuitry to support SD cards (mainly the 3.3 V power regulator) has also been moved to the readily available card modules. This allows the use of SD and MicroSD modules and the aforementioned flexibility in positioning these modules in a housing.
 
-## The Firmware
-The CBM D9096 in general can be used with the standard petSD+ version of the NODISKEMU firmware.
-As the petSD+ uses a single pin of the in adc mode with the different buttons forming different voltage dividers with 2.79V = no button pressed, the Resistors R1 and R2 are neccessary when using the official firmware.
+## The SD card adapters - 1.10 adding more options
+The board now features two headers to attach readily available SD card and Micro SD card modules.
+The one marked *5V SPI SD-CARD* is operating at 5 volts! The card modules attached here  MUST have appropriate level shifters installed.
+Tis applies to nearly all readily available Micro SD card modules, but only some older SD card modules.
+Tested and working boards are: *DEBO MICROSD 2* and *C-Control Pro Nr. 197220*
+Boards that just use a voltage regulator and some passive resistors do NOT work on this header!
 
-Andy Grady has provided a customized [firmware](https://github.com/InsaneDruid/cbm-d9096/blob/main/firmware/cbm-d9096.bin "cbm-d9096.bin") in which the button input is completely deactivated, so that the use of a voltage divider is no longer necessary and R1 and R2 can be omitted. This *should* also improve stability against input voltage fluctuations, as the button voltages where very tightly spaced with only 0.1x Volt between different input meanings
+The one marked *3.3V SPI SD-CARD* is operating at 3.3 volts using a TXU0304 SPI level shifter and a 3.3V regulator.The card modules attached here don't need (and should *not* have!) their own level shifters.
+This applies to nearly all readily available full size SD card modules. 
+
+Note: you CANNOT install two SD card modules at the same time!
+
+## The Firmware
+Andy Grady has provided a customized [firmware](https://github.com/InsaneDruid/cbm-d9096/blob/main/firmware/cbm-d9096.bin "cbm-d9096.bin") in which the button input is completely deactivated, so that the use of a voltage divider and filtered analog voltage is no longer necessary and with V1.1.0 these supporting parts are omitted. 
 
 ### Firmware installation
 * Flash the [bootloader](https://github.com/InsaneDruid/cbm-d9096/blob/main/firmware/new-bootloader-for-16-MHz-petSD-plus.hex "new-bootloader-for-16-MHz-petSD-plus.hex") file to the Atmega. 
@@ -40,25 +49,18 @@ The board is designed to be configured for a 2 LED or 3 LED setup:
 ### 2 LED variant
 In the 2 LED variant power and error are combined in a *bidirectional* dual-color led (NOT common cathode or common anode!), reminiscent of how the CBM drives did. Activity is shown on a standard LED.
 
-* install a jumper wire in place of R4
-* connect a bidirectional LED between pins 3 (error) and 4 (power) of J4
-* connect a standard LED between pins 1(activity) and 2 (gnd) of J4
+* install a jumper wire in place of R2
+* connect a bidirectional LED between pins 3 (error) and 4 (power) of J2
+* connect a standard LED between pins 1(activity) and 2 (gnd) of J2
 
 ### 3 LED variant
 In the 3 LED variant power and error as well as activity are displayed with independent LED.
 
-* don't install R6 (leave open)
-* install a 330 Ohm resistor in R4
-* install a 330 Ohm resistor in R5
-* connect power LED between pins 4 (power) and 2 (GND) of J4
-* connect error LED between pins 3 (error) and 2 (GND) of J4
-* connect activity LED between pins 1 (activity) and 2 (GND) of J4
-
-## The SD card adapters - 5V warning
-The board can be connected to readily available SD-Card and Micro-SD-Card interface boards.
-Note that the D9096 is operating at 5 volts, the Interface boards used MUST have appropriate level shifters installed.
-Tested and working boards are: *DEBO MICROSD 2* and *C-Control Pro Nr. 197220*
-Boards that just use a voltage regulator and some passive resistors do NOT work!
+* don't install R4 (leave open)
+* install a 330 Ohm resistor in R1, R2, R3
+* connect power LED between pins 4 (power) and 2 (GND) of J2
+* connect error LED between pins 3 (error) and 2 (GND) of J2
+* connect activity LED between pins 1 (activity) and 2 (GND) of J2
 
 ## The printable housing option
 To adapt the cheaply available Bahar enclosue 150*140*70mm project box, 3d printable parts are available.
