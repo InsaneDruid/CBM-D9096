@@ -36,6 +36,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -48,6 +49,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -60,6 +62,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -394,7 +397,7 @@
 		(remove_unused_layers no)
 		(uuid "4c30e2c1-c9bd-49aa-87c8-81c4f515fac8")
 	)
-	(model "${KIPRJMOD}/cbm-d9096_lib_fp.3dshapes/Centronic Dip Right Angle Female 20pos.step"
+	(model "${KIPRJMOD}/../cbm-d9096_lib_fp.3dshapes/Centronic Dip Right Angle Female 20pos.step"
 		(offset
 			(xyz 0 0 0)
 		)
