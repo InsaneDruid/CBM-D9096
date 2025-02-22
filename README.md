@@ -3,9 +3,9 @@ Inspired by the work of Steve J. Gray and his cbmSD-mini, the CBM D9096 is a cos
 
 ![CBM 9096 render](https://github.com/InsaneDruid/cbm-d9096/blob/main/images/cbm-d9096_render.png)
 
-[Schematic](https://github.com/InsaneDruid/cbm-d9096/blob/main/cbm-d9096.pdf "Schematic")  
+[Schematic](https://github.com/InsaneDruid/cbm-d9096/blob/main/cbm-d9096/cbm-d9096.pdf "Schematic")  
 
-[Bill of Materials](https://htmlpreview.github.io/?https://github.com/InsaneDruid/cbm-d9096/blob/main/bom/cbm-d9096_bom.html "Bill of Materials")
+[Bill of Materials](https://htmlpreview.github.io/?https://github.com/InsaneDruid/cbm-d9096/blob/main/cbm-d9096/bom/cbm-d9096_bom.html "Bill of Materials")
 
 ## The features
 A 24-pin Centronics IEEE488/GBIP connector allows the CBM D9096 to be placed anywhere in the IEEE488 chain. This also eliminates the need for a second connector, as the IEEE488 connectors are designed to be stackable.
