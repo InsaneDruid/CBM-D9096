@@ -14,7 +14,7 @@ The SD-Card interface, the status LED and the RESET Button are implemented as pi
 ## The features that got removed
 The display with its display controller, the clock, the clock battery, the buttons for interfacing with the display, and the IEC connector have been removed. The circuitry to support SD cards (mainly the 3.3 V power regulator) has also been moved to the readily available card modules. This allows the use of SD and MicroSD modules and the aforementioned flexibility in positioning these modules in a housing.
 
-## The SD card adapters - 1.10 adding more options
+## The SD card adapters - 1.1.0 adding more options
 The board now features two headers to attach readily available SD card and Micro SD card modules.
 The one marked *5V SPI SD-CARD* (J3) is operating at 5 volts! The card modules attached here  MUST have appropriate level shifters installed.
 Tis applies to nearly all readily available Micro SD card modules, but only some older SD card modules.
