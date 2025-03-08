@@ -15216,7 +15216,7 @@
 		)
 	)
 	(gr_text "WP"
-		(at 190.1825 133.6675 90)
+		(at 187.6425 133.6675 90)
 		(layer "F.SilkS")
 		(uuid "063d0218-3d79-43ff-8aca-a598ebd81b8b")
 		(effects
@@ -15531,7 +15531,7 @@
 		)
 	)
 	(gr_text "CD"
-		(at 187.6425 133.6675 90)
+		(at 190.1825 133.6675 90)
 		(layer "F.SilkS")
 		(uuid "ae3c8ce8-e3a9-408c-a1df-dce1657716af")
 		(effects
