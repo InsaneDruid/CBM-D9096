@@ -21,10 +21,15 @@ Tis applies to nearly all readily available Micro SD card modules, but only some
 Tested and working boards are: *DEBO MICROSD 2* and *C-Control Pro Nr. 197220*
 Boards that just use a voltage regulator and some passive resistors do NOT work on this header!
 
+To use the 5V SPI SD-CARD header, JP1 needs to be set to position 2-3 (leftwards)
+
 The one marked *3.3V SPI SD-CARD* (J5) is operating at 3.3 volts using a TXU0304 SPI level shifter and a 3.3V regulator.The card modules attached here don't need (and should *not* have!) their own level shifters.
 This applies to nearly all readily available full size SD card modules. Note: this port supplies 3.3V OR 5V to the card module. Select the appropriate pin depending on the card module to connect. 
 
-*Attention!* you CANNOT install two SD card modules at the same time!
+To use the 3.3V SPI SD-CARD header, JP1 needs to be set to position 1-2 (rightwards)
+
+*Attention!* you CANNOT use two SD card modules at the same time!
+
 
 ## The *card detect* and *write protect* signals
 Both SD card headers J3 & J5 have ground pin headers available behind the pins for the card detect ("CD") and write protect ("WP) signals (marked J4 & J6). If the attached card module doesn't provide these signals, for example all Micro SD modules, connect a 2.54mm jumper between the CD and or WP pins of J3/J5 and the associated pin of J4/J6 to permanently tie these signals to ground (permanently enable them).

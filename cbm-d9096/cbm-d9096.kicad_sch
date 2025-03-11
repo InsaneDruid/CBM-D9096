@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "CBM D9096")
-		(date "2025-02-07")
-		(rev "1.1.0")
+		(date "2025-03-11")
+		(rev "1.1.1")
 		(comment 1 "based on work by Nils Eilers and Steve J. Gray")
 		(comment 2 "creativecommons.org/licenses/by-sa/4.0/")
 		(comment 3 "License: CC BY-SA 4.0")
@@ -2902,6 +2902,206 @@
 						)
 					)
 					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Jumper:Jumper_3_Open"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "JP"
+				(at -2.54 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Jumper_3_Open"
+				(at 0 2.794 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Jumper, 3-pole, both open"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Jumper SPDT"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Jumper* TestPoint*3Pads* TestPoint*Bridge*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Jumper_3_Open_0_0"
+				(circle
+					(center -3.302 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 3.302 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Jumper_3_Open_0_1"
+				(arc
+					(start -3.048 1.016)
+					(mid -1.651 1.4992)
+					(end -0.254 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.508) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.254 1.016)
+					(mid 1.651 1.4992)
+					(end 3.048 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Jumper_3_Open_1_1"
+				(pin passive line
+					(at -6.35 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 0 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -7607,7 +7807,7 @@
 		)
 		(uuid "77d6d042-1978-412a-abb5-045d69f47873")
 	)
-	(text "O P T I O N: S D  M O D U L E S\n\nEITHER: For using SD card modules WITHOUT\nonboard voltage translation to 3.3V\n(most regular SD card modules)\n* populate U4, U5, C8, C9\n* use the \"3.3V SPI SD-Card\" header\n\nOR: for using sd card modules WITH\nonboard voltage translation to 3.3V\n(most micro SD modules)\n* use the \"5.0V SPI SD-Card\" header \n* U4, U5, C8, C9 can be left unpopulated"
+	(text "O P T I O N: S D  M O D U L E S\n\nEITHER: For using SD card modules WITHOUT\nonboard voltage translation to 3.3V\n(most regular SD card modules)\n* populate U4, U5, C8, C9\n* use the \"3.3V SPI SD-Card\" header\n* set JP1 to rightwards position (1-2)\n\nOR: for using sd card modules WITH\nonboard voltage translation to 3.3V\n(most micro SD modules)\n* use the \"5.0V SPI SD-Card\" header \n* set JP1 to leftward position (2-3)\n* U4, U5, C8, C9 can be left unpopulated"
 		(exclude_from_sim no)
 		(at 31.75 210.82 0)
 		(effects
@@ -8647,6 +8847,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 160.02) (xy 203.2 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08945536-540b-40fa-8f1b-1a23c427111b")
+	)
+	(wire
+		(pts
 			(xy 313.69 236.22) (xy 322.58 236.22)
 		)
 		(stroke
@@ -8724,6 +8934,16 @@
 			(type default)
 		)
 		(uuid "136220d7-b7a2-4025-a92c-335a689eb00c")
+	)
+	(wire
+		(pts
+			(xy 190.5 163.83) (xy 190.5 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13ac332f-873f-4271-a0b7-284aeb7a6c9c")
 	)
 	(wire
 		(pts
@@ -10227,16 +10447,6 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 160.02) (xy 209.55 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9081b9c1-7f13-4575-ad44-d9622af82654")
-	)
-	(wire
-		(pts
 			(xy 342.9 53.34) (xy 345.44 53.34)
 		)
 		(stroke
@@ -10517,6 +10727,16 @@
 	)
 	(wire
 		(pts
+			(xy 196.85 167.64) (xy 212.09 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a64c379d-b525-4f0a-b9c3-ecf87fed0beb")
+	)
+	(wire
+		(pts
 			(xy 335.28 189.23) (xy 337.82 189.23)
 		)
 		(stroke
@@ -10594,16 +10814,6 @@
 			(type default)
 		)
 		(uuid "acaf0306-06b7-443d-b787-34fa3b50b08d")
-	)
-	(wire
-		(pts
-			(xy 209.55 167.64) (xy 212.09 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "adaa22d9-ab40-4b2f-8a6c-098d5a627bbe")
 	)
 	(wire
 		(pts
@@ -14201,6 +14411,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 203.2 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3a250ae3-e082-4e22-86e7-77b7e6613c86")
+		(property "Reference" "#PWR023"
+			(at 203.2 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 203.2 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 203.2 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 203.2 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 203.2 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4a527ca6-44be-4d40-b842-11f814ec5d61")
+		)
+		(instances
+			(project "cbm-d9096"
+				(path "/0ff508fd-18da-4ab7-9844-3c8a28c2587e"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 38.1 43.18 90)
 		(mirror x)
@@ -14396,72 +14672,6 @@
 			(project ""
 				(path "/0ff508fd-18da-4ab7-9844-3c8a28c2587e"
 					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 209.55 160.02 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4172c585-a22c-40b1-8c98-b9018ad29dbe")
-		(property "Reference" "#PWR012"
-			(at 209.55 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 209.55 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 209.55 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 209.55 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 209.55 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ffe7e14f-2877-44f6-9a47-9f2b6e857b47")
-		)
-		(instances
-			(project "cbm-d9096"
-				(path "/0ff508fd-18da-4ab7-9844-3c8a28c2587e"
-					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -17061,6 +17271,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 190.5 196.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cce85b1f-7627-45cb-a703-db0d576ed841")
+		(property "Reference" "#PWR012"
+			(at 190.5 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 190.5 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 190.5 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 190.5 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "19e6fd04-97d2-469b-a7ba-3ad85c2e27a5")
+		)
+		(instances
+			(project "cbm-d9096"
+				(path "/0ff508fd-18da-4ab7-9844-3c8a28c2587e"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Network05_Split")
 		(at 209.55 85.09 0)
 		(unit 5)
@@ -17339,6 +17615,77 @@
 			(project "cbm-d9096"
 				(path "/0ff508fd-18da-4ab7-9844-3c8a28c2587e"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:Jumper_3_Open")
+		(at 196.85 163.83 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d9055207-cb97-4009-9c01-0abe803eb42b")
+		(property "Reference" "JP1"
+			(at 186.69 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "3.3V port enable/disable"
+			(at 176.53 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x03_P2.00mm_Vertical"
+			(at 196.85 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Jumper, 3-pole, both open"
+			(at 196.85 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "719c64f2-eab4-4ef7-b31e-03ef872801c3")
+		)
+		(pin "2"
+			(uuid "fba7e7fa-3d94-425c-82da-b0c9560f7e4c")
+		)
+		(pin "1"
+			(uuid "5e390402-2cf3-4fb8-9d7f-01f2a752d584")
+		)
+		(instances
+			(project ""
+				(path "/0ff508fd-18da-4ab7-9844-3c8a28c2587e"
+					(reference "JP1")
 					(unit 1)
 				)
 			)
